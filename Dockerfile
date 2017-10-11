@@ -16,6 +16,7 @@ ADD https://github.com/support-project/knowledge/releases/download/v1.10.0/knowl
       /usr/local/tomcat/webapps/ROOT.war
 
 VOLUME [ "/root/.knowledge" ]
+COPY ./volumes/knowledge/custom_connection.xml /root/.knowledge/
 EXPOSE 8080
 
 CMD [ "/usr/local/bin/dumb-init", "/usr/local/tomcat/bin/catalina.sh", "run" ]
